@@ -1,5 +1,5 @@
 \documentclass{article}
-
+\usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
 \usepackage{extramarks}
 \usepackage{amsmath}
@@ -8,6 +8,7 @@
 \usepackage{tikz}
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
+\usepackage{enumitem}
 
 \usetikzlibrary{automata,positioning}
 
@@ -26,7 +27,8 @@
 
 \pagestyle{fancy}
 \lhead{\hmwkAuthorName}
-\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
+\chead{\hmwkClass\ \hmwkClassTime: \hmwkTitle}
+%\chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
 \rhead{\firstxmark}
 \lfoot{\lastxmark}
 \cfoot{\thepage}
@@ -86,12 +88,12 @@
 %   - Author
 %
 
-\newcommand{\hmwkTitle}{Homework\ \#2}
-\newcommand{\hmwkDueDate}{February 12, 2014}
-\newcommand{\hmwkClass}{Calculus}
-\newcommand{\hmwkClassTime}{Section A}
-\newcommand{\hmwkClassInstructor}{Professor Isaac Newton}
-\newcommand{\hmwkAuthorName}{\textbf{Josh Davis} \and \textbf{Davis Josh}}
+\newcommand{\hmwkTitle}{Homework\ \#1}
+\newcommand{\hmwkDueDate}{September, 2019}
+\newcommand{\hmwkClass}{ST511}
+\newcommand{\hmwkClassTime}{Section 2}
+\newcommand{\hmwkClassInstructor}{Instructor: Dr. Shuting Wang}
+\newcommand{\hmwkAuthorName}{\textbf{Fausto Rodríguez Zapata}}
 
 %
 % Title Page
@@ -99,8 +101,9 @@
 
 \title{
     \vspace{2in}
+    \textbf{Statistical Methods For Researchers}\\
     \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
-    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ at 3:10pm}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ at 11:59pm}\\
     \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
     \vspace{3in}
 }
@@ -140,6 +143,119 @@
 \maketitle
 
 \pagebreak
+
+\begin{homeworkProblem}
+\subsection{1.3} 
+In 2014, Congress cut \$8.7 billion from the Supplemental Nutrition Assistance Program (SNAP), more commonly referred to as food stamps. The rationale for the decrease is that providing assistance to people will result in the next generation of citizens being more dependent on the government for support. Hoynes (2012) describes a study to evaluate this claim. The study examines 60,782 families over the time period of 1968 to 2009 which is subsequent to the introduction of the Food Stamp Program in 1961. This study examines the impact of a positive and policy driven change in economic resources available in utero and during childhood on the economic health of individuals in adulthood. The study assembled data linking family background in early childhood to adult health and economic outcomes. The study concluded that the Food Stamp Program has effects decades after initial exposure. Specifically, access to food stamps in childhood leads to a significant reduction in the incidence of metabolic syndrome (obesity, high blood pressure, and diabetes) and, for women, an increase in economic self-sufficiency. Overall, the results suggest substantial internal and external benefits of SNAP.
+\begin{enumerate}[label=\alph*.]
+\item Describe the sample. \\
+\textbf{R/} ``60,782 families over the time period of 1968 to 2009" it is not clear how many families received SNAP benefits.
+\item What characteristics of the population are of interest to the researchers?\\
+\textbf{R/} Increase of resources due to SNAP during gestation and childhood,  health and economic status of individual in adulthood.
+\item If the sample measurements are used to make inferences about the population characteristics, why is a measure of reliability of the inferences important?\\
+\textbf{R/} Because in order to make an informed decision the evidence in favor of or against the policy must be reliable, or a least uncertainty must be quantified and weighted into the decision.
+\item Identify the population that is of interest to the researchers.\\
+\textbf{R/} The set of individuals receiving SNAP benefits. 
+\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\subsection{1.5}
+During the 2004 senatorial campaign in a large southwestern state, illegal immigration was a major issue. One of the candidates argued that illegal immigrants made use of educational and social services without having to pay property taxes. The other candidate pointed out that the cost of new homes in their state was 20–30\% less than the national average due to the low wages received by the large number of illegal immigrants working on new home construction. A random sample of 5,500 registered voters was asked the question, ``Are illegal immigrants generally a benefit or a liability to the state’s economy?" The results were as follows: 3,500 people responded ``liability," 1,500 people responded ``benefit," and 500 people responded ``uncertain." 
+\begin{enumerate}[label=\alph*.]
+\item What is the population of interest?\\
+\textbf{R/}  Registered voters. From the opening sentence one could assume that the population of interest is specifically the registered voters in the unnamed southwestern state. However there is no explicit specification of the geographical scale corresponding to the 5500 voters sample, it could have been drawn at the national level also.
+\item What is the population from which the sample was selected?\\
+\textbf{R/} From the text it is not clear whether the 5500 subjects were sampled just in the unnamed southwestern state or throughout the US.
+\item Does the sample adequately represent the population?\\
+\textbf{R/}
+Assuming a normal approximation, the confidence interval for a proportion is:
+
+$\displaystyle {\hat {p}}\pm z{\sqrt {\frac {{\hat {p}}\left(1-{\hat {p}}\right)}{n}}}$
+
+In our case, $\hat{p}$ is the estimator for a proportion of voters in the population, $z$ is the percentile for the standard normal distribution corresponding to an $\alpha$ confidence level, and $n$ is the sample size.
+
+With a 95\% confidence,  $\alpha =0.05$ and  $z =1.96$. For an expected $\hat {p} = 0.5$ and $n = 5500$,  the margin of error would be:
+
+$\displaystyle {MOE = 1.96 {{\frac {0.5}{\sqrt{5500}}}}}$
+
+$\displaystyle {MOE \approx 0.0132}$
+
+A litle above a percentage point. 
+
+This means that $n = 5500$ is enough to estimate proportions of a population with a 95\% confidence within  $\pm 1\%$ margin.
+
+If the sample was randomly selected, yes it will be representative of its corresponding population, whether it is drawn from the unnamed southwestern state or the whole US ($N \approx 329$ millions).
+
+
+
+\item If a second random sample of 5,000 registered voters was selected, would the results be nearly the same as the results obtained from the initial sample of 5,000 voters? Explain your answer.
+
+\textbf{R/}
+
+$\displaystyle {MOE = 1.96 {{\frac {0.5}{\sqrt{5000}}}}}$
+
+$\displaystyle {MOE \approx 0.0139}$
+
+If both samples are drawn randomly from the same population we do no expect them to differ much, because given their size both are representative and big enough to calculate $\hat{p}$ within a percentage point.
+
+
+\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\subsection{2.3}
+A news report states that minority children who take advanced mathematics courses in high school have a first-year GPA in college that is equivalent to that of white students. The newspaper columnist suggested that the lack of advanced mathematics courses in high school curricula in inner-city schools was a major cause of the low college success rate of students from inner-city schools. What confounding variables may be present that invalidate the columnist’s conclusion?\\
+\textbf{R/}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\subsection{2.7}
+The circuit judges in a rural county are considering a change in how jury pools are selected for felony trials. They ask the administrator of the courts to assess the county residents’ reaction to changing the requirement for membership in the jury pool from the current requirement of all registered voters to a new requirement of all registered voters plus all residents with a current driver’s license. The administrator sends questionnaires to a random sample of 1,000 people from the list of registered voters in the county and receives responses from 253 people.
+\begin{enumerate}[label=\alph*.]
+\item What is the population of interest?\\
+\textbf{R/}
+\item What is the sampling frame?\\
+\textbf{R/}
+\item What possible biases could be present in using the information from the survey?\\
+\textbf{R/}
+\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\subsection{2.10}
+The New York City school district is planning a survey of 1,000 of its 250,000 parents or guardians who have students currently enrolled. They want to assess the parents’ opinion about mandatory drug testing of all students participating in any extracurricular activities, not just sports. An alphabetical listing of all parents or guardians is available for selecting the sample. In each of the following descriptions of the method of selecting the 1,000 participants in the survey, identify the type of sampling method used (simple random sampling, stratified sampling, or clus- ter sampling).
+\begin{enumerate}[label=\alph*.]
+\item Each name is randomly assigned a number. The names with numbers 1 through 1,000 are selected for the survey.\\
+\textbf{R/}
+\item The schools are divided into five groups according to grade level taught at the school: K–2, 3–5, 6–7, 8–9, 10–12. Five separate sampling frames are constructed, one for each group. A simple random sample of 200 parents or guardians is se- lected from each group.\\
+\textbf{R/}\\
+\item The school district is also concerned that the parent’s or guardian’s opinion may differ depending on the age and sex of the student. Each name is randomly as- signed a number. The names with numbers 1 through 1,000 are selected for the survey. The parent is asked to fill out a separate survey for each of their currently enrolled children.\\
+\textbf{R/}\\
+\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\subsection{2.17}
+
+A medical study is designed to evaluate a new drug, D1, for treating a particular illness. There is a widely used treatment, D2, for this disease to which the new drug will be compared. A placebo will also be included in the study. The researcher has selected 10 hospitals for the study. She does a thorough evaluation of the hospitals and concludes that there may be aspects of the hospitals that may result in the elevation of responses at some of the hospitals. Each hospital has six wards of patients. She will randomly select six patients in each ward to participate in the study. Within each hospital, two wards are randomly assigned to administer D1, two wards to administer D2, and two wards administer the placebo. All six patients in each of the wards will be given the same treatment. Age, BMI, blood pressure, and a measure of degree of illness are recorded for each patient upon entry into the hospital. The response is an assessment of the degree of illness after 6 days of treatment.
+
+In place of the design described above make the following change. Within each hospital, the three treatments will be randomly assigned to the patients, with two patients in each ward receiving D1, two patients receiving D2, and two patients receiving the placebo.
+
+Identify:
+\begin{enumerate}[label=\alph*.]
+\item Type of design.\\
+\textbf{R/} 
+\item Explanatory and response variables.\\
+\textbf{R/} 
+\item Levels of treatment.\\
+\textbf{R/} 
+\item Which key principles of experimental design were used.\\
+\textbf{R/} 
+\end{enumerate}
+\end{homeworkProblem}
+
+
 
 \begin{homeworkProblem}
     Give an appropriate positive constant \(c\) such that \(f(n) \leq c \cdot
